@@ -1,21 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://bch6pvrxi6h4e"]
+[gd_scene load_steps=3 format=3 uid="uid://bch6pvrxi6h4e"]
 
-[ext_resource type="Texture2D" uid="uid://0mwhpiyhub48" path="res://icon.svg" id="1_uhtkn"]
 [ext_resource type="Script" path="res://slot.gd" id="1_y8ur6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_384em"]
+[sub_resource type="LabelSettings" id="LabelSettings_7gmol"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
 
 [node name="Slot" type="Node2D"]
 script = ExtResource("1_y8ur6")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_384em")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D/CollisionShape2D"]
-texture = ExtResource("1_uhtkn")
-
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -38.0
+offset_top = -25.0
+offset_right = 35.0
+offset_bottom = 23.0
+text = "+ 3"
+label_settings = SubResource("LabelSettings_7gmol")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
