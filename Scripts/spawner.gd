@@ -2,7 +2,7 @@ extends Node
 
 class_name Spawner
 
-var slot_scene = preload("res://slot.tscn")
+var slot_scene = preload("res://Scenes/slot.tscn")
 @onready var timer = $Timer
 
 var current_number = 3

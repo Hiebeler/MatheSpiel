@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://csb4udkov1kt1"]
+
+[ext_resource type="Texture2D" uid="uid://0mwhpiyhub48" path="res://icon.svg" id="1_qj5ki"]
+[ext_resource type="PackedScene" uid="uid://d0xfoa710ulud" path="res://Scenes/spawner.tscn" id="2_2svmy"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 88)
+texture = ExtResource("1_qj5ki")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Spawner" parent="." instance=ExtResource("2_2svmy")]

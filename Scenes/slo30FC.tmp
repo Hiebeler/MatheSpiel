@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://bch6pvrxi6h4e"]
 
-[ext_resource type="Script" path="res://slot.gd" id="1_y8ur6"]
+[ext_resource type="Script" path="res://Scripts/slot.gd" id="1_8a7ly"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7gmol"]
 font_size = 24
 font_color = Color(0, 0, 0, 1)
 
 [node name="Slot" type="Node2D"]
-script = ExtResource("1_y8ur6")
+script = ExtResource("1_8a7ly")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
@@ -20,5 +20,7 @@ text = "+ 3"
 label_settings = SubResource("LabelSettings_7gmol")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
