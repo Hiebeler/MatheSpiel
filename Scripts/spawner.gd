@@ -25,7 +25,18 @@ func spawn_slot():
 	slot.position.y = viewport_rect.end.y * 0.15 - half_height
 	
 	var new_calc = get_next_number()
-	slot.set_label_number(new_calc.calc)
+	slot.set_calculations_label_number(new_calc.calc)
+	
+	set_results(new_calc.result, slot)
+
+func set_results(result, slot):
+	match randi_range(1,3):
+		1:
+			slot.set_answers(result, randi_range(0,100), randi_range(0,100), 1)
+		2:
+			slot.set_answers(result, randi_range(0,100), randi_range(0,100), 1)
+		3:
+			slot.set_answers(result, randi_range(0,100), randi_range(0,100), 1)
 
 func start_spawning_slots():
 	timer.start()
@@ -53,4 +64,4 @@ func get_next_number():
 		calc = "-" + str(summand)
 		
 		max_step = max_step + 1
-	return { "calc": calc, "value": result}
+	return { "calc": calc, "result": result}

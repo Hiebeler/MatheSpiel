@@ -18,7 +18,7 @@ script = ExtResource("1_8a7ly")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
-[node name="Label" type="Label" parent="."]
+[node name="Calculation" type="Label" parent="."]
 offset_left = -51.0
 offset_top = 115.0
 offset_right = 39.0
@@ -28,24 +28,34 @@ label_settings = SubResource("LabelSettings_7gmol")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Answer1Area" type="Area2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-scale = Vector2(2, 2)
+[node name="Sprite2D" type="Sprite2D" parent="Answer1Area"]
+modulate = Color(0.6, 0, 0.12549, 1)
 texture = ExtResource("2_amyad")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Answer1Area"]
 shape = SubResource("RectangleShape2D_6y15v")
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="Answer2Area" type="Area2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="Answer2Area"]
+modulate = Color(0, 0.678431, 0.901961, 1)
 texture = ExtResource("2_amyad")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Answer2Area"]
 shape = SubResource("RectangleShape2D_6y15v")
 
-[node name="Label2" type="Label" parent="."]
+[node name="Answer3Area" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Answer3Area"]
+modulate = Color(0.0588235, 1, 0.0235294, 0)
+texture = ExtResource("2_amyad")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Answer3Area"]
+shape = SubResource("RectangleShape2D_6y15v")
+
+[node name="Answer1" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -62,7 +72,7 @@ label_settings = SubResource("LabelSettings_wpcec")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="."]
+[node name="Answer2" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -79,7 +89,7 @@ label_settings = SubResource("LabelSettings_wpcec")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="."]
+[node name="Answer3" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -95,5 +105,6 @@ text = "12"
 label_settings = SubResource("LabelSettings_wpcec")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
